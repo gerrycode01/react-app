@@ -4,14 +4,7 @@ import { TodoCounter } from "./TodoCounter";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { TodoList } from "./TodoList";
 import { TodoSearch } from "./TodoSearch";
-
-const defaultTodos = [
-  { text: "Cortar cebolla", completed: true },
-  { text: "Aprender maps", completed: false },
-  { text: "Domar React", completed: true },
-  { text: "Llorar con la llorona", completed: false },
-  { text: "Mirar platzi", completed: false },
-];
+import { defaultTodos } from "./defaultTodos";
 
 function App() {
   const [todos, setTodos] = useState(defaultTodos);
