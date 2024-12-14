@@ -1,4 +1,4 @@
-import './App.css';
+import { use, useState } from 'react';
 import { TodoItem } from './TodoItem';
 import { TodoCounter } from './TodoCounter';
 import { CreateTodoButton } from './CreateTodoButton';
@@ -7,17 +7,31 @@ import { TodoSearch } from './TodoSearch';
 
 const defaultTodos = [
   {text: "Cortar cebolla", completed: true},
-  {text: "Aprender maps", completed: true},
+  {text: "Aprender maps", completed: false},
   {text: "Domar React", completed: true},
-  {text: "Llorar con la llorona", completed: true},
-  {text: "Mirar platzi", completed: true}
+  {text: "Llorar con la llorona", completed: false},
+  {text: "Mirar platzi", completed: false}
 ];
 
 function App() {
+  const [todos, setTodos] = useState(defaultTodos)
+  const [searchValue, setSearchValue] = useState('');
+
+  const completedTodos = todos.filter(
+    todo => !!todo.completed
+  ).length;
+  const totalTodos = todos.length;
+
   return (
     <>
-      <TodoCounter completed={1} total={4} />
-      <TodoSearch/>
+      <TodoCounter 
+        completed={completedTodos} 
+        total={totalTodos} 
+      />
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <TodoList>
         {defaultTodos.map(todo => (
           <TodoItem 
