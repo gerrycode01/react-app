@@ -45,15 +45,19 @@ function App() {
       <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodoList>
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onCompleteTodo={() => onCompleteTodo(todo.text)}
-            onDeleteTodo={() => onDeleteTodo(todo.text)}
-          />
-        ))}
+        {todos.length === 0 ? (
+          <TodoItem key={"Vacio"} text={"Vacio"} completed={false} />
+        ) : (
+          searchedTodos.map((todo) => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onCompleteTodo={() => onCompleteTodo(todo.text)}
+              onDeleteTodo={() => onDeleteTodo(todo.text)}
+            />
+          ))
+        )}
       </TodoList>
       <CreateTodoButton />
     </>
