@@ -1,11 +1,13 @@
-import './TodoCounter.css'
+import "./TodoCounter.css";
 
 function TodoCounter({ total, completed }) {
-  return (
-    <h1 className='TodoCounter'>
-      Has completado <span>{completed}</span> de <span>{total}</span>  TODOS
+  return total === completed ? (
+    <h1 className="TodoCounter"> Completado</h1>
+  ) : (
+    <h1 className="TodoCounter">
+      Has completado <span>{completed}</span> de <span>{total}</span> TODOS
     </h1>
-  )
+  );
 }
 
 export { TodoCounter };
