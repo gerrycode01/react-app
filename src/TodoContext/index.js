@@ -6,6 +6,7 @@ const TodoContex = React.createContext();
 function TodoProvider({ children }) {
   const [todos, setTodos] = useState(defaultTodos);
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -30,6 +31,12 @@ function TodoProvider({ children }) {
     setTodos(newTodos);
   };
 
+  const addTodo = (newTodoValue) => {
+    const newTodos = [...todos];
+    newTodos.push({ text: newTodoValue.trim(), completed: false });
+    setTodos(newTodos);
+  };
+
   return (
     <TodoContex.Provider
       value={{
@@ -38,9 +45,12 @@ function TodoProvider({ children }) {
         totalTodos,
         searchedTodos,
         searchValue,
+        openModal,
+        setOpenModal,
         setSearchValue,
         onCompleteTodo,
         onDeleteTodo,
+        addTodo,
       }}
     >
       {children}
