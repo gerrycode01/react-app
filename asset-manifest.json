@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gerrycode01/react-app/static/css/main.41d7e02b.css",
-    "main.js": "/gerrycode01/react-app/static/js/main.0886fdf6.js",
-    "static/js/488.3b34fbcc.chunk.js": "/gerrycode01/react-app/static/js/488.3b34fbcc.chunk.js",
-    "index.html": "/gerrycode01/react-app/index.html",
-    "main.41d7e02b.css.map": "/gerrycode01/react-app/static/css/main.41d7e02b.css.map",
-    "main.0886fdf6.js.map": "/gerrycode01/react-app/static/js/main.0886fdf6.js.map",
-    "488.3b34fbcc.chunk.js.map": "/gerrycode01/react-app/static/js/488.3b34fbcc.chunk.js.map"
+    "main.css": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/css/main.41d7e02b.css",
+    "main.js": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/js/main.149b7591.js",
+    "static/js/488.3b34fbcc.chunk.js": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/js/488.3b34fbcc.chunk.js",
+    "index.html": "/home/gerry/Documents/beggining-with-react/todomachine/build/index.html",
+    "main.41d7e02b.css.map": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/css/main.41d7e02b.css.map",
+    "main.149b7591.js.map": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/js/main.149b7591.js.map",
+    "488.3b34fbcc.chunk.js.map": "/home/gerry/Documents/beggining-with-react/todomachine/build/static/js/488.3b34fbcc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.41d7e02b.css",
-    "static/js/main.0886fdf6.js"
+    "static/js/main.149b7591.js"
   ]
 }
