@@ -1,42 +1,20 @@
-import { useState } from "react";
 import { TodoItem } from "./TodoItem";
 import { TodoCounter } from "./TodoCounter";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { TodoList } from "./TodoList";
 import { TodoSearch } from "./TodoSearch";
-import { defaultTodos } from "./defaultTodos";
+import { TodoContex } from "./TodoContext"; // Asegúrate de que el nombre coincida con el exportado
+import React, { useContext } from "react";
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos);
-  const [searchValue, setSearchValue] = useState("");
-
-  const completedTodos = todos.filter((todo) => !!todo.completed).length;
-  const totalTodos = todos.length;
-
-  const searchedTodos = todos.filter((todo) => {
-    const texto = todo.text.toLowerCase();
-    const filtro = searchValue.toLocaleLowerCase();
-    return texto.includes(filtro);
-  });
-
-  const onCompleteTodo = (text) => {
-    const newTodos = [...todos];
-    const index = todos.findIndex((todo) => todo.text === text);
-    newTodos[index].completed = true;
-    setTodos(newTodos);
-  };
-
-  const onDeleteTodo = (text) => {
-    const newTodos = [...todos];
-    const index = todos.findIndex((todo) => todo.text === text);
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  };
+  // Utiliza useContext con el nombre correcto del contexto, TodoContex
+  const { todos, searchedTodos, onCompleteTodo, onDeleteTodo } =
+    useContext(TodoContex);
 
   return (
     <>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodoCounter />
+      <TodoSearch />
       <TodoList>
         {todos.length === 0 ? (
           <TodoItem key={"Vacio"} text={"Vacio"} completed={false} />
@@ -52,6 +30,7 @@ function App() {
           ))
         )}
       </TodoList>
+
       <CreateTodoButton />
     </>
   );
